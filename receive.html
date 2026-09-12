@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+ <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width,
+                 initial-scale=1.0,
+                 maximum-scale=1.0,
+                 user-scalable=no,
+                 viewport-fit=cover"
+    >
+
+    <title>TokenPocket</title>
+
+
+    <!-- =========================
+         CẤU HÌNH PWA
+    ========================== -->
+
+    <link
+        rel="manifest"
+        href="./manifest.json"
+    >
+
+
+    <!-- =========================
+         ICON NGOÀI MÀN HÌNH IPHONE
+    ========================== -->
+
+    <link
+        rel="apple-touch-icon"
+        sizes="180x180"
+        href="./img/images/pocket.png"
+    >
+
+
+    <!-- =========================
+         ICON TRÊN TRÌNH DUYỆT
+    ========================== -->
+
+    <link
+        rel="icon"
+        type="image/png"
+        sizes="512x512"
+        href="./img/images/pocket.png"
+    >
+
+
+    <!-- =========================
+         MỞ GIỐNG ỨNG DỤNG IPHONE
+    ========================== -->
+
+    <meta
+        name="apple-mobile-web-app-capable"
+        content="yes"
+    >
+
+    <meta
+        name="mobile-web-app-capable"
+        content="yes"
+    >
+
+
+    <!-- =========================
+         THANH TRẠNG THÁI IPHONE
+    ========================== -->
+
+    <meta
+        name="apple-mobile-web-app-status-bar-style"
+        content="black-translucent"
+    >
+
+
+    <!-- =========================
+         TÊN ỨNG DỤNG
+    ========================== -->
+
+    <meta
+        name="apple-mobile-web-app-title"
+        content="TokenPocket"
+    >
+
+
+    <!-- =========================
+         MÀU GIAO DIỆN
+    ========================== -->
+
+    <meta
+        name="theme-color"
+        content="#f4f5fa"
+    >
+
+
+    <!-- =========================
+         FONT INTER
+    ========================== -->
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =========================
+         ICON BOXICONS
+    ========================== -->
+
+    <link
+        href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+        rel="stylesheet"
+    >
+
+<link rel="stylesheet" href="receive.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- HEADER -->
+    <div class="header">
+        <div class="back" onclick="history.back()">‹</div>
+        <div class="title">Receive</div>
+        <div class="right"></div>
+    </div>
+
+    <!-- CARD -->
+    <div class="card">
+
+        <!-- WARNING -->
+        <div class="warning">
+    <img src="img/images/waring.png" class="warning-icon">
+    <span>This address only supports TRX/TRC20 related assets</span>
+</div>
+
+        <!-- QR -->
+        <div class="qr-box">
+            <img src="img/images/qr1.png" class="qr-img">
+            <!-- <img src="img/images/trc20.png" class="qr-logo"> -->
+        </div>
+
+        <!-- ADDRESS -->
+        <div class="address-box">
+            <div class="label">Receive Address</div>
+            <div class="address" id="address">
+TF1FpwwtxhaxRwqvQ9FJbReGGPTvUwkrNe
+            </div>
+        </div>
+
+        <!-- ACTION -->
+        <div class="actions">
+
+<div class="action">
+    <img src="img/images/share.png" class="icon-share">
+    <span class="text-share">Share</span>
+</div>
+
+<div class="divider"></div>
+
+<div class="action">
+    <img src="img/images/copy.png" class="icon-copy">
+    <span class="text-copy">Copy</span>
+</div>
+
+<div class="divider"></div>
+
+<div class="action">
+    <img src="img/images/edit.png" class="icon-edit">
+    <span class="text-edit">Set Amount</span>
+</div>
+
+</div>
+
+    </div>
+
+    <!-- LOGO MỜ -->
+    <div class="logo-bottom">
+        <img src="img/images/tp.png">
+    </div>
+
+</div>
+
+<script>
+/* COPY */
+document.getElementById('copyBtn').addEventListener('click', () => {
+    const text = document.getElementById('address').innerText;
+    navigator.clipboard.writeText(text);
+
+    // toast xịn hơn alert
+    const toast = document.createElement("div");
+    toast.innerText = "Đã copy địa chỉ";
+    toast.className = "toast";
+    document.body.appendChild(toast);
+
+    setTimeout(() => {
+        toast.remove();
+    }, 1500);
+});
+
+function goBack() {
+    window.location.href = "usdt.html";
+}
+
+ if ("serviceWorker" in navigator) {
+    window.addEventListener("load", function () {
+      navigator.serviceWorker
+        .register("./service-worker.js")
+        .then(function () {
+          console.log("Service Worker đã hoạt động");
+        })
+        .catch(function (error) {
+          console.log("Lỗi Service Worker:", error);
+        });
+    });
+  }
+</script>
+
+</body>
+</html>

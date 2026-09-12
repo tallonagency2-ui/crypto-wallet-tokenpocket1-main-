@@ -1,0 +1,370 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.phone-container {
+    width: 375px;
+    background-color: #ffffff; /* Màu xám nhạt nền */
+    min-height: 812px;
+    position: relative;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* Header */
+.header {
+    background: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Balance */
+.balance-section {
+    background: white;
+    text-align: center;
+    padding: 20px 0 40px 0;
+}
+
+.coin-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.coin-logo { width: 30px; height: 30px; }
+
+.network-tag {
+    background: #f0f0f0;
+    font-size: 10px;
+    padding: 2px 4px;
+    border-radius: 4px;
+    color: #888;
+}
+.filter-icon-img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+
+    margin-left: auto;
+    opacity: 0.6;
+}
+
+.amount { font-size: 32px; font-weight: 700; }
+.fiat-amount { color: #8e8e93; font-size: 14px; }
+
+/* Price Card */
+.price-card {
+    background: white;
+    margin: 15px;
+    padding: 15px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.price-val { text-align: right; }
+.price-val .bold { display: block; font-weight: 600; font-size: 14px; }
+.price-val .sub { font-size: 11px; color: #8e8e93; }
+
+.percent-tag {
+    background: #c4c4c4;
+    color: white;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+
+/* Tabs */
+.tabs {
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    color: #8e8e93;
+}
+
+.tab-item.active {
+    color: black;
+    font-weight: bold;
+    border-bottom: 2px solid black;
+    padding-bottom: 5px;
+}
+
+.filter-icon { margin-left: auto; color: black; }
+body {
+    background: #ffffff;
+}
+
+.phone-container {
+    background: #ffffff;
+}
+
+.section-bg {
+    background: #f7f8fa;
+}
+/* Transaction List */
+.transaction-list {
+       background: white;
+    margin: 0 15px;
+    border-radius: 12px;
+    padding: 0 15px;
+}
+
+.tx-item {
+    display: flex;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #f2f2f2;
+}
+
+.tx-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 12px;
+}
+
+.tx-icon.send { background: #e7f6ed; color: #48bb78; }
+.tx-icon.receive { background: #ebf5ff; color: #3b82f6; }
+
+.tx-info { flex: 1; }
+.tx-info .address { display: block; font-weight: 600; font-size: 14px; }
+.tx-info .type { font-size: 12px; color: #8e8e93; }
+
+.tx-amount { text-align: right; }
+.tx-amount .val { display: block; font-weight: bold; font-size: 14px; }
+.tx-amount .time { font-size: 11px; color: #8e8e93; }
+
+.negative .val { color: #48bb78; }
+.positive .val { color: #3b82f6; }
+
+/* Bottom Nav */
+.bottom-nav {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: white;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-top: 1px solid #f2f2f2;
+}
+.btn-receive {
+    position: relative;
+    overflow: hidden;
+     z-index: 1;
+}
+
+/* lớp xám */
+.btn-receive::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.12); /* xám nhẹ */
+    opacity: 0;
+    transition: 0.12s;
+    border-radius: inherit;
+}
+.btn-receive {
+    position: relative;
+    overflow: hidden;
+}
+
+/* lớp phủ xám */
+.btn-receive::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.15); /* 👈 độ xám */
+    opacity: 0;
+    transition: 0.15s;
+    border-radius: inherit;
+}
+
+/* khi click */
+.btn-receive.active::after {
+    opacity: 1;
+}
+/* khi click */
+.btn-receive.active::after {
+    opacity: 1;
+}
+
+.btn-receive {
+    position: relative;
+    overflow: hidden;
+}
+
+/* lớp xám phủ */
+.btn-receive::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.12);
+    opacity: 0;
+    transition: 0.12s;
+    border-radius: inherit;
+    pointer-events: none;
+}
+
+/* khi click */
+.btn-receive.active::after {
+    opacity: 1;
+}
+.btn {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* lớp phủ xám */
+.btn::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.15);
+    opacity: 0;
+    transition: opacity 0.15s;
+    border-radius: inherit;
+    pointer-events: none;
+    z-index: 2; /* 👈 QUAN TRỌNG */
+}
+
+/* khi click */
+.btn.active::after {
+    opacity: 1;
+}
+
+/* nội dung nằm trên lớp xám */
+.btn > * {
+    position: relative;
+    z-index: 3;
+}
+.btn {
+    flex: 1;
+    height: 48px;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.send-btn { background-color: #48bb78; }
+.receive-btn { background-color: #3b82f6; }
+
+.swap-action {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 10px;
+    margin-left: 5px;
+}
+
+.swap-action i { font-size: 20px; margin-bottom: 2px; }
+.footer {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    padding: 16px;
+    background: #f4f5fa;
+
+    display: flex;
+    gap: 10px;
+}
+
+/* 2 nút lớn */
+.btn {
+    flex: 1;
+    height: 44px;
+    border-radius: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+
+    font-size: 15px;
+    font-weight: 600;
+}
+
+/* SEND */
+.btn-send {
+    background: #05c978;
+    color: #fff;
+}
+.text-send{
+    margin-left: 10px !important;
+}
+/* RECEIVE */
+.btn-receive {
+    background: #4c72ff;
+    color: #fff;
+}
+
+.btn-receive.active {
+    transform: scale(0.97);
+}
+
+/* SWAP (NHỎ BÊN PHẢI) */
+.btn-swap {
+    width: 50px;
+    height: 44px;
+
+    background: transparent;
+    color: #111;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+}
+
+/* icon swap */
+.btn-swap i {
+    font-size: 18px;
+}
+
+/* text swap */
+.btn-swap span {
+    font-size: 10px;
+}
+
+.img-trc20{
+    width: 50px;
+    width: 50px;
+}

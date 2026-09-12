@@ -1,0 +1,275 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background: linear-gradient(180deg, #4da8ff, #2c80fd
+);
+    display: flex;
+    justify-content: center;
+}
+
+.app {
+    width: 375px;
+    min-height: 100vh;
+    position: relative;
+}
+.warning {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    background: #fdeee6;
+    color: #ff6a00;
+
+    padding: 10px 12px;
+    border-radius: 12px;
+    font-size: 13px;
+}
+
+/* icon */
+.warning-icon {
+    width: 68px;
+    height: 64px;
+    margin-left: -9px;
+}
+/* HEADER */
+.header {
+      display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    color: #fff;
+    font-weight: 500;
+    font-size: 14px;
+    position: relative;
+    margin-top: 11px;
+}
+
+.back {
+    position: absolute;
+    left: 16px;
+    font-size: 22px;
+    cursor: pointer;
+        font-weight: 30;
+}
+
+/* CARD */
+.card {
+    background: #fff;
+    margin: 20px 16px;
+    border-radius: 20px;
+    padding: 16px;
+}
+.card {
+    border-radius: 24px;
+
+    box-shadow: 
+        0 10px 25px rgba(0,0,0,0.08),
+        0 2px 6px rgba(0,0,0,0.05);
+}
+
+/* WARNING */
+.warning {
+       background: #fff3e8;
+    color: #ff7a00;
+    padding: 0px;
+    border-radius: 12px;
+    font-size: 13px;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+.warning span {
+    margin-left: -36px;
+    margin-top: -8px;
+    font-weight: 600;
+}
+
+/* QR */
+.qr-box {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.qr-img {
+    width: 320px;
+    margin-top: -45px;
+}
+
+.qr-logo {
+    position: absolute;
+    width: 40px;
+    bottom: 50%;
+    transform: translateY(50%);
+}
+
+/* ADDRESS */
+.address-box {
+    background: #f3f4f7;
+    border-radius: 12px;
+    padding: 12px;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: -39px;
+}
+
+.label {
+    font-size: 12px;
+    color: #888;
+    margin-bottom: 5px;
+}
+
+.address {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* ACTION */
+.actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* FIX CHÍNH Ở ĐÂY */
+.action {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px; /* khoảng cách icon + chữ */
+
+    font-size: 14px;
+    color: #333;
+}
+.action span{
+    margin-left: -12px;
+    font-weight: 500;
+}
+
+/* icon */
+.action img {
+    width: 18px;
+}
+
+/* divider */
+.divider {
+    width: 1px;
+    height: 20px;
+    background: #ddd;
+        margin-left: -31px;
+}
+.action img {
+    width: 45px;
+}
+
+
+.divider {
+    width: 1px;
+    height: 20px;
+    background: #ddd;
+}
+.bg-logo {
+    position: fixed;
+    bottom: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0.06;
+    pointer-events: none;
+}
+
+.bg-logo img {
+    width: 160px;
+}
+.toast {
+    position: fixed;
+    bottom: 120px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #000;
+    color: #fff;
+    padding: 10px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    opacity: 0.9;
+    z-index: 999;
+}
+.action {
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+    transition: 0.15s;
+    margin-left: -32px;
+}
+
+.action:active {
+    transform: scale(0.92);
+    opacity: 0.6;
+}
+.logo-bottom {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.logo-bottom img {
+   width: 259px;
+    opacity: 0.28;
+    filter: brightness(1.2) contrast(1.1);
+    mix-blend-mode: screen;
+    margin-bottom: -90px;
+}
+.logo-text {
+    position: fixed;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+
+    font-weight: 600;
+    font-size: 18px;
+
+    color: rgba(255,255,255,0.2); /* mờ nhưng nét */
+}
+/* mặc định */
+/* .action img {
+    width: 18px;
+    height: 18px;
+} */
+
+/* riêng từng icon */
+.icon-share {
+    width: 18px;
+}
+
+.icon-copy {
+    width: 18px;   /* nhỏ hơn */
+        margin-left: -16px;
+            filter: brightness(0) saturate(100%) opacity(0.9);
+    
+}
+
+.icon-edit {
+    width: 17px;
+    margin-right: 3px;
+}
+.text-edit{
+    margin-right: -24px;
+    
+}
+.logo-bottom img {
+      width: 246px;
+    opacity: 0.65;
+    filter: brightness(1.2) contrast(1.1);
+    mix-blend-mode: screen;
+    margin-bottom: -107px;
+}
+

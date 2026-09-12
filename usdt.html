@@ -1,0 +1,1169 @@
+<!doctype html>
+<html lang="vi">
+    <head>
+        <meta charset="UTF-8" />
+
+
+    <meta
+        name="viewport"
+        content="width=device-width,
+                 initial-scale=1.0,
+                 maximum-scale=1.0,
+                 user-scalable=no,
+                 viewport-fit=cover"
+    >
+
+    <title>TokenPocket</title>
+
+
+    <!-- =========================
+         CẤU HÌNH PWA
+    ========================== -->
+
+    <link
+        rel="manifest"
+        href="./manifest.json"
+    >
+
+
+    <!-- =========================
+         ICON NGOÀI MÀN HÌNH IPHONE
+    ========================== -->
+
+    <link
+        rel="apple-touch-icon"
+        sizes="180x180"
+        href="./img/images/pocket.png"
+    >
+
+
+    <!-- =========================
+         ICON TRÊN TRÌNH DUYỆT
+    ========================== -->
+
+    <link
+        rel="icon"
+        type="image/png"
+        sizes="512x512"
+        href="./img/images/pocket.png"
+    >
+
+
+    <!-- =========================
+         MỞ GIỐNG ỨNG DỤNG IPHONE
+    ========================== -->
+
+    <meta
+        name="apple-mobile-web-app-capable"
+        content="yes"
+    >
+
+    <meta
+        name="mobile-web-app-capable"
+        content="yes"
+    >
+
+
+    <!-- =========================
+         THANH TRẠNG THÁI IPHONE
+    ========================== -->
+
+    <meta
+        name="apple-mobile-web-app-status-bar-style"
+        content="black-translucent"
+    >
+
+
+    <!-- =========================
+         TÊN ỨNG DỤNG
+    ========================== -->
+
+    <meta
+        name="apple-mobile-web-app-title"
+        content="TokenPocket"
+    >
+
+
+    <!-- =========================
+         MÀU GIAO DIỆN
+    ========================== -->
+
+    <meta
+        name="theme-color"
+        content="#f4f5fa"
+    >
+
+
+    <!-- =========================
+         FONT INTER
+    ========================== -->
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =========================
+         ICON BOXICONS
+    ========================== -->
+
+    <link
+        href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+        rel="stylesheet"
+    >
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                -webkit-tap-highlight-color: transparent;
+                font-family: 'Inter', sans-serif;
+            }
+            html,
+            body {
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+                /* background: #2f3a4c; */
+            }
+            body {
+                display: flex;
+                justify-content: center;
+            }
+            button,
+            a {
+                border: 0;
+                outline: 0;
+                background: none;
+                color: inherit;
+                text-decoration: none;
+            }
+
+            .app {
+                width: 100%;
+                max-width: 430px;
+                height: 100dvh;
+                background: #f4f5fa;
+                position: relative;
+                overflow: hidden;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .page-scroll {
+                flex: 1;
+                overflow-y: auto;
+                overflow-x: hidden;
+                scrollbar-width: none;
+                -webkit-overflow-scrolling: touch;
+            }
+            .page-scroll::-webkit-scrollbar {
+                display: none;
+            }
+
+            .header {
+                  margin-top: 28px;
+                padding: 18px 16px 0;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+            .header i {
+                    font-size: 31px;
+                     color: #3a3a3e;
+            }
+            .header-title {
+                font-size: 18px;
+                font-weight: 500;
+                color: #3a3a3e;
+            }
+/* ICON CHUNG */
+.header img {
+           width: 73px;
+    height: 77px;
+    /* object-fit: contain; */
+    margin-right: -26px;
+}
+
+/* nếu muốn chỉnh riêng từng icon */
+.icon-back {
+    width: 22px;
+}
+
+.icon-info {
+    width: 20px;
+}
+            .balance {
+                padding: 28px 16px 24px;
+            }
+            .balance-top {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .coin {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+            .coin-logo-wrap {
+                width: 34px;
+                height: 34px;
+                position: relative;
+            }
+            .coin-logo {
+                width: 102px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-left: -33px;
+    margin-top: -11px;
+            }
+            .chain {
+                position: absolute;
+                left: 4px;
+                bottom: 1px;
+                font-size: 6px;
+                color: #fff;
+                background: rgba(0, 0, 0, 0.45);
+                padding: 0 2px;
+                border-radius: 3px;
+            }
+            .coin-name-row {
+                display: flex;
+                align-items: center;
+                gap: 4px;
+            }
+            .copy-icon-img {
+        width: 58px;
+    height: 47px;
+    object-fit: contain;
+    opacity: 0.6;
+    margin-left: -14px;
+}
+            .coin-name {
+                font-size: 16px;
+                font-weight: 600;
+                color: #3a3a3e;
+            }
+            .copy-icon {
+                font-size: 14px;
+                color: #a7a9b1;
+            }
+
+            .amount {
+                text-align: right;
+            }
+            .amount h2 {
+                font-size: 19px;
+                font-weight: 500;
+                color: #3a3a3e;
+                    font-weight: 600;
+            }
+            .amount span {
+                font-size: 12px;
+                color: #9c9fa8;
+            }
+
+            .market {
+    margin: 12px 16px;
+    height: 56px;
+
+    background: #fff;
+    border-radius: 14px;
+
+    padding: 0 14px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* LEFT */
+.market-title {
+    font-size: 15px;
+    font-weight: 500;
+    color: #3a3a3e;
+}
+
+/* RIGHT */
+.market-right {
+      display: flex;
+    align-items: center;
+    gap: 9px;
+    margin-right: -7px;
+}
+
+/* PRICE */
+.market-price {
+    text-align: right;
+    line-height: 1.2;
+}
+
+.market-price strong {
+    font-size: 16px;
+    font-weight: 500;
+    display: block;
+    color: #3a3a3e;
+}
+
+.market-price span {
+    font-size: 11px;
+    color: #9c9fa8;
+}
+
+/* % BOX */
+.percent {
+    min-width: 48px;
+    height: 24px;
+
+    background: #bfc4ca;
+    color: #fff;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 6px;
+}
+
+/* ARROW */
+.arrow-icon {
+    width: 14px;
+    height: 14px;
+    opacity: 0.6;
+}
+            .percent {
+               width: 67px;
+    height: 31px;
+    border-radius: 5px;
+    background: #bfc4ca;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    margin-left: -4px;
+    justify-content: center;
+            }
+
+            .tabs {
+                height: 58px;
+                padding: 0 16px;
+                display: flex;
+                align-items: center;
+                gap: 28px;
+                font-weight: 500;
+                    margin-top: -16px;
+            }
+            .tab {
+                font-size: 15px;
+                color: #9b9ea7;
+                position: relative;
+            }
+            .tab.active {
+                color: #3a3a3e;
+            }
+            .tab.active::after {
+                content: '';
+                position: absolute;
+                left: 0;
+                bottom: -12px;
+                width: 22px;
+                height: 2px;
+                background: #111318;
+                border-radius: 99px;
+            }
+            .filter-icon {
+                margin-left: auto;
+                font-size: 24px;
+            }
+
+            .list {
+               margin: 2px 16px; /* thêm khoảng trắng trên + 2 bên */
+    background: #fff;
+    border-radius: 16px; /* bo full */
+    overflow: hidden;
+            }
+
+            .item {
+                min-height: 58px;
+                /* padding: 8px 14px; */
+                display: flex;
+                justify-content: space-between;
+                /* align-items: flex-start; */
+                position: relative;
+                gap: 8px;
+            }
+            .item::after {
+    content: '';
+    position: absolute;
+    left: 58px;
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    background: #eeeeef;
+}
+            .item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 12px;
+    text-decoration: none;
+    color: inherit;
+    transition: background 0.15s ease;
+}
+
+.item.active {
+    background: rgba(0,0,0,0.06);
+}
+            .item::after {
+                content: '';
+                position: absolute;
+                left: 58px;
+                right: 0;
+                bottom: 0;
+                height: 1px;
+                background: #eeeeef;
+            }
+
+            .left {
+                flex: 1;
+                display: flex;
+                gap: 11px;
+                min-width: 0;
+            }
+
+            .tx-icon {
+                width: 32px;
+                height: 32px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: #fff;
+                flex-shrink: 0;
+            }
+            .tx-icon i {
+                font-size: 23px;
+                transform: rotate(45deg);
+            }
+            .send {
+                background: #53c69d;
+            }
+            .receive {
+                background:#2c80fd;
+            }
+
+            .addr-row {
+                display: flex;
+                align-items: center;
+                gap: 4px;
+            }
+            .addr {
+             max-width: 145px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 14px;
+    font-weight: 600;
+    color: #3a3a3e;
+            }
+            .addr-copy {
+                font-size: 13px;
+                color: #a7a9b1;
+            }
+            .type {
+                font-size: 11px;
+                color: #9b9ea7;
+                margin-top: 3px;
+                font-weight: 500;
+            }
+
+            .right {
+                width: 116px;
+                text-align: right;
+            }
+            .tx-amount {
+                font-size: 13px;
+                font-weight: 700;
+                white-space: nowrap;
+            }
+            .pos {
+                color: #1d7aff;
+            }
+            .neg {
+                color:#00a684;
+            }
+            .time {
+                font-size: 10px;
+                color: #9b9ea7;
+                margin-top: 4px;
+                white-space: nowrap;
+            }
+
+            .footer {
+             position: relative;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 30px 15px 25px;
+    color: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr 58px;
+    gap: 9px;
+    z-index: 20;
+    background: white;
+            }
+
+            .btn {
+                /* height: 42px; */
+                border-radius: 9px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 7px;
+                font-size: 14px;
+                font-weight: 700;
+                color: #fff;
+            }
+            .btn i {
+                font-size: 21px;
+            }
+            .btn-send {
+                background:#53c69d;
+            }
+            .btn-receive {
+                background:#2c80fd;
+            }
+            .btn-swap {
+                background: #f2f3f5;
+                color: #111318;
+                flex-direction: column;
+                gap: 0;
+                font-size: 10px;
+            }
+            /* ICON CHUNG */
+            .icon-send{
+     width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+.btn img {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+}
+.btn .icon-send{
+     width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+.btn .icon-receive{
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+.btn span {
+    transform: translateX(5px);
+}
+
+/* ICON SWAP NHỎ HƠN */
+.btn-swap img {
+      width: 63px;
+    height: 83px;
+        margin-top: -29px;
+}
+.btn-swap {
+        width: 59px;
+    height: 51px;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* gap: 2px; */
+    margin-left: -4px;
+}
+/* ICON */
+.icon-swap {
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
+}
+
+/* TEXT */
+.btn-swap span {
+    font-size: 10px;
+    color: #111;
+        margin-top: -29px;
+}
+        </style>
+    </head>
+
+    <body>
+        <div id="app" class="page">
+            
+        </div>
+        <div class="app">
+            <div class="page-scroll" id="appScroll">
+                <header class="header">
+                    <a href="index.html"><i class="bx bx-chevron-left"></i></a>
+                    <div class="header-title">Tether USD</div>
+                      <img src="img/images/info.png" class="icon-info">
+                </header>
+
+                <section class="balance">
+                    <div class="balance-top">
+                        <div class="coin">
+
+    <div class="coin-logo-wrap">
+
+        <div class="img-trc20">
+        <img class="coin-logo" src="img/images/TRC20.png" />
+        </div>
+       
+        <!-- <div class="chain">TRC20</div> -->
+    </div>
+
+    <div class="coin-name-row">
+        <div class="coin-name">USDT</div>
+        <img src="img/images/copy.png" class="copy-icon-img">
+    </div>
+</div>
+
+                        <div class="amount">
+                            <h2>940.17</h2>
+                            <span>$2.88</span>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="market">
+                    <div class="market-title">Price & Market</div>
+                    <div class="market-right">
+                        <div class="market-price">
+                            <strong>1.0000</strong>
+                            <span>$1.0000</span>
+                        </div>
+                        <div class="percent">0%</div>
+                       <i class="bx bx-chevron-right" style="font-size: 25px; color: #3a3a3e;"></i>
+                    </div>
+                </section>
+
+                <section class="tabs">
+                    <div class="tab active">All</div>
+                    <div class="tab">In</div>
+                    <div class="tab">Out</div>
+                    <i class="bx bx-filter-alt filter-icon"></i>
+                </section>
+
+               <section class="list">
+
+<a href="tx-detail1.html" class="item">
+    <div class="left">
+        <div class="tx-icon receive">
+            <i class="bx bx-down-arrow-alt"></i>
+        </div>
+
+        <div>
+            <div class="addr-row">
+                <div class="addr">a84a6e...b1d2ae</div>
+                <i class="bx bx-copy addr-copy"></i>
+            </div>
+
+            <div class="type">Receive</div>
+        </div>
+    </div>
+
+    <div class="right">
+        <div class="tx-amount pos">+219 USDT</div>
+        <div class="time">08/24 17:47:16 </div>
+    </div>
+</a>
+
+<a href="tx-detail1.html" class="item">
+    <div class="left">
+        <div class="tx-icon receive">
+            <i class="bx bx-down-arrow-alt"></i>
+        </div>
+
+        <div>
+            <div class="addr-row">
+                <div class="addr">cf88ef...b0f829</div>
+                <i class="bx bx-copy addr-copy"></i>
+            </div>
+
+            <div class="type">Receive</div>
+        </div>
+    </div>
+
+    <div class="right">
+        <div class="tx-amount pos">+134 USDT</div>
+        <div class="time">08/23 09:12:45 </div>
+    </div>
+</a>
+
+<a href="tx-detail.html" class="item">
+    <div class="left">
+        <div class="tx-icon send">
+            <i class="bx bx-up-arrow-alt"></i>
+        </div>
+
+        <div>
+            <div class="addr-row">
+                <div class="addr">108fcc...7a55d4</div>
+                <i class="bx bx-copy addr-copy"></i>
+            </div>
+
+            <div class="type">Send</div>
+        </div>
+    </div>
+
+    <div class="right">
+        <div class="tx-amount neg">-301 USDT</div>
+        <div class="time">08/22  19:49:54 </div>
+    </div>
+</a>
+            
+<a href="tx-detail1.html" class="item">
+    <div class="left">
+        <div class="tx-icon send">
+            <i class="bx bx-up-arrow-alt"></i>
+        </div>
+
+        <div>
+            <div class="addr-row">
+                <div class="addr">bb8d0a...94f5d1</div>
+                <i class="bx bx-copy addr-copy"></i>
+            </div>
+
+            <div class="type">Send</div>
+        </div>
+    </div>
+
+    <div class="right">
+        <div class="tx-amount neg">-200 USDT</div>
+        <div class="time">08/21  00:57:33 </div>
+    </div>
+</a>
+
+<a href="tx-detail1.html" class="item">
+    <div class="left">
+        <div class="tx-icon receive">
+            <i class="bx bx-down-arrow-alt"></i>
+        </div>
+
+        <div>
+            <div class="addr-row">
+                <div class="addr">57205a...8a1289</div>
+                <i class="bx bx-copy addr-copy"></i>
+            </div>
+
+            <div class="type">Receive</div>
+        </div>
+    </div>
+
+    <div class="right">
+        <div class="tx-amount pos">+374 USDT</div>
+        <div class="time">08/20 17:40:06 </div>
+    </div>
+</a>                 
+                   
+<a href="tx-detail1.html" class="item">
+    <div class="left">
+        <div class="tx-icon send">
+            <i class="bx bx-up-arrow-alt"></i>
+        </div>
+
+        <div>
+            <div class="addr-row">
+                <div class="addr">d8b7a8...252291</div>
+                <i class="bx bx-copy addr-copy"></i>
+            </div>
+
+            <div class="type">Send</div>
+        </div>
+    </div>
+
+    <div class="right">
+        <div class="tx-amount neg">-300 USDT</div>
+        <div class="time">08/20 14:14:03 </div>
+    </div>
+</a>
+
+<a href="tx-detail1.html" class="item">
+    <div class="left">
+        <div class="tx-icon send">
+            <i class="bx bx-up-arrow-alt"></i>
+        </div>
+
+        <div>
+            <div class="addr-row">
+                <div class="addr">2b4f99...0aa6e1</div>
+                <i class="bx bx-copy addr-copy"></i>
+            </div>
+
+            <div class="type">Send</div>
+        </div>
+    </div>
+
+    <div class="right">
+        <div class="tx-amount neg">-201 USDT</div>
+        <div class="time">08/19 21:43:17 </div>
+    </div>
+</a>
+                   
+<a href="tx-detail1.html" class="item">
+    <div class="left">
+        <div class="tx-icon receive">
+            <i class="bx bx-down-arrow-alt"></i>
+        </div>
+
+        <div>
+            <div class="addr-row">
+                <div class="addr">a26fb5...d39069</div>
+                <i class="bx bx-copy addr-copy"></i>
+            </div>
+
+            <div class="type">Receive</div>
+        </div>
+    </div>
+
+    <div class="right">
+        <div class="tx-amount pos">+190 USDT</div>
+        <div class="time">08/19 19:28:14</div>
+    </div>
+</a>
+
+<a href="tx-detail1.html" class="item">
+    <div class="left">
+        <div class="tx-icon receive">
+            <i class="bx bx-down-arrow-alt"></i>
+        </div>
+
+        <div>
+            <div class="addr-row">
+                <div class="addr">a26fb5...d39069</div>
+                <i class="bx bx-copy addr-copy"></i>
+            </div>
+
+            <div class="type">Receive</div>
+        </div>
+    </div>
+
+    <div class="right">
+        <div class="tx-amount pos">+247 USDT</div>
+        <div class="time">08/19 09:52:00</div>
+    </div>
+</a>
+
+<a href="tx-detail.html" class="item">
+    <div class="left">
+        <div class="tx-icon send">
+            <i class="bx bx-up-arrow-alt"></i>
+        </div>
+
+        <div>
+            <div class="addr-row">
+                <div class="addr">5692ee...6d8834</div>
+                <i class="bx bx-copy addr-copy"></i>
+            </div>
+
+            <div class="type">Send</div>
+        </div>
+    </div>
+
+    <div class="right">
+        <div class="tx-amount neg">-56 USDT</div>
+        <div class="time">08/18 11:37:48 </div>
+    </div>
+</a>
+<a href="tx-detail.html" class="item">
+    <div class="left">
+        <div class="tx-icon send">
+            <i class="bx bx-up-arrow-alt"></i>
+        </div>
+
+        <div>
+            <div class="addr-row">
+                <div class="addr">15e263...fda56a</div>
+                <i class="bx bx-copy addr-copy"></i>
+            </div>
+
+            <div class="type">Send</div>
+        </div>
+    </div>
+
+    <div class="right">
+        <div class="tx-amount neg">-400 USDT</div>
+        <div class="time">08/18 09:52:24</div>
+    </div>
+</a>
+<a href="tx-detail.html" class="item">
+    <div class="left">
+        <div class="tx-icon send">
+            <i class="bx bx-up-arrow-alt"></i>
+        </div>
+
+        <div>
+            <div class="addr-row">
+                <div class="addr">qian21...09lkaq</div>
+                <i class="bx bx-copy addr-copy"></i>
+            </div>
+
+            <div class="type">Send</div>
+        </div>
+    </div>
+
+    <div class="right">
+        <div class="tx-amount neg">-342 USDT</div>
+        <div class="time">08/16 09:41:42</div>
+    </div>
+</a>
+<a href="tx-detail1.html" class="item">
+    <div class="left">
+        <div class="tx-icon send">
+            <i class="bx bx-up-arrow-alt"></i>
+        </div>
+
+        <div>
+            <div class="addr-row">
+                <div class="addr">c059e6...210ab8</div>
+                <i class="bx bx-copy addr-copy"></i>
+            </div>
+
+            <div class="type">Send</div>
+        </div>
+    </div>
+
+    <div class="right">
+        <div class="tx-amount neg">-490 USDT</div>
+        <div class="time">08/11 17:13:27</div>
+    </div>
+</a>
+<a href="tx-detail.html" class="item">
+    <div class="left">
+        <div class="tx-icon send">
+            <i class="bx bx-up-arrow-alt"></i>
+        </div>
+
+        <div>
+            <div class="addr-row">
+                <div class="addr">038273...f63403</div>
+                <i class="bx bx-copy addr-copy"></i>
+            </div>
+
+            <div class="type">Send</div>
+        </div>
+    </div>
+
+    <div class="right">
+        <div class="tx-amount neg">-300 USDT</div>
+        <div class="time">08/07 20:05:06</div>
+    </div>
+</a>
+<a href="tx-detail.html" class="item">
+    <div class="left">
+        <div class="tx-icon send">
+            <i class="bx bx-up-arrow-alt"></i>
+        </div>
+
+        <div>
+            <div class="addr-row">
+                <div class="addr">PQka92...1kau4e</div>
+                <i class="bx bx-copy addr-copy"></i>
+            </div>
+
+            <div class="type">Send</div>
+        </div>
+    </div>
+
+    <div class="right">
+        <div class="tx-amount neg">-399 USDT</div>
+        <div class="time">08/04 12:26:19</div>
+    </div>
+</a>
+<a href="tx-detail.html" class="item">
+    <div class="left">
+        <div class="tx-icon send">
+            <i class="bx bx-up-arrow-alt"></i>
+        </div>
+
+        <div>
+            <div class="addr-row">
+                <div class="addr">18aorm...PMat17</div>
+                <i class="bx bx-copy addr-copy"></i>
+            </div>
+
+            <div class="type">Send</div>
+        </div>
+    </div>
+
+    <div class="right">
+        <div class="tx-amount neg">-194 USDT</div>
+        <div class="time">06/09 19:31:24</div>
+    </div>
+</a>
+<a href="tx-detail.html" class="item">
+    <div class="left">
+        <div class="tx-icon send">
+            <i class="bx bx-up-arrow-alt"></i>
+        </div>
+
+        <div>
+            <div class="addr-row">
+                <div class="addr">430609...acf771</div>
+                <i class="bx bx-copy addr-copy"></i>
+            </div>
+
+            <div class="type">Send</div>
+        </div>
+    </div>
+
+    <div class="right">
+        <div class="tx-amount neg">-1,017 USDT</div>
+        <div class="time">06/07 14:15:15</div>
+    </div>
+    
+<a href="tx-detail1.html" class="item">
+    <div class="left">
+        <div class="tx-icon receive">
+            <i class="bx bx-down-arrow-alt"></i>
+        </div>
+
+        <div>
+            <div class="addr-row">
+                <div class="addr">HQRc5m...aTR264</div>
+                <i class="bx bx-copy addr-copy"></i>
+            </div>
+
+            <div class="type">Receive</div>
+        </div>
+    </div>
+
+    <div class="right">
+        <div class="tx-amount pos">+199.932098 USDT</div>
+        <div class="time">06/07 11:01:42</div>
+    </div>
+</a>
+
+</a>
+<a href="tx-detail1.html" class="item">
+    <div class="left">
+        <div class="tx-icon send">
+            <i class="bx bx-up-arrow-alt"></i>
+        </div>
+
+        <div>
+            <div class="addr-row">
+                <div class="addr">cc7057...0dcfe9</div>
+                <i class="bx bx-copy addr-copy"></i>
+            </div>
+
+            <div class="type">Send</div>
+        </div>
+    </div>
+
+    <div class="right">
+        <div class="tx-amount neg">-200 USDT</div>
+        <div class="time">06/07 10:54:03</div>
+    </div>
+</a>
+<a href="tx-detail1.html" class="item">
+    <div class="left">
+        <div class="tx-icon send">
+            <i class="bx bx-up-arrow-alt"></i>
+        </div>
+
+        <div>
+            <div class="addr-row">
+                <div class="addr">7ef712...db6f4a</div>
+                <i class="bx bx-copy addr-copy"></i>
+            </div>
+
+            <div class="type">Send</div>
+        </div>
+    </div>
+
+    <div class="right">
+        <div class="tx-amount neg">-249 USDT</div>
+        <div class="time">06/05 17:36:27</div>
+    </div>
+</a>
+
+<!-- Tiếp tục các item còn lại -->
+
+</section>
+            </div>
+<script>
+document.querySelectorAll('.item').forEach(item => {
+    item.addEventListener('click', function(e) {
+        e.preventDefault();
+
+        this.classList.add('active');
+
+        setTimeout(() => {
+            window.location.href = this.getAttribute('href');
+        }, 120);
+    });
+});
+</script>
+    <footer class="footer">
+    <button class="btn btn-send">
+        <img src="img/images/send.png" class="icon-send">
+        <div class="text-send" style="    margin-left: -14px;">
+                 <span>Send</span>
+        </div>
+     
+    </button>
+
+   <button class="btn btn-receive" data-link="receive.html">
+    <img src="img/images/receive.png" class="icon-receive">
+    
+    <div class="text-receive" style="margin-left: -14px;">
+        <span>Receive</span>
+    </div>
+</button>
+
+    <button class="btn-swap">
+        <img src="img/images/swap.png" class="icon-swap">
+        <span>Swap</span>
+    </button>
+</footer>
+        </div>
+        <script>
+document.querySelectorAll('.btn[data-link]').forEach(btn => {
+    btn.addEventListener('click', function() {
+
+        this.classList.add('active');
+
+        setTimeout(() => {
+            window.location.href = this.dataset.link;
+        }, 120);
+    });
+});
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", function () {
+      navigator.serviceWorker
+        .register("./service-worker.js")
+        .then(function () {
+          console.log("Service Worker đã hoạt động");
+        })
+        .catch(function (error) {
+          console.log("Lỗi Service Worker:", error);
+        });
+    });
+  }
+</script>
+    </body>
+    
+</html>

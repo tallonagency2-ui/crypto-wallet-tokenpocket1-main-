@@ -1,0 +1,18 @@
+{
+  "name": "TokenPocket",
+  "short_name": "TokenPocket",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f4f5fa",
+  "theme_color": "#f4f5fa",
+  "icons": [
+    {
+      "src": "./img/images/pocket.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

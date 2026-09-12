@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="vi">
+   <head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width,
+                 initial-scale=1.0,
+                 maximum-scale=1.0,
+                 user-scalable=no,
+                 viewport-fit=cover"
+    >
+
+    <title>TokenPocket</title>
+
+    <!-- CSS -->
+    <link
+        rel="stylesheet"
+        href="./TokenPocket1.css"
+    >
+
+    <!-- Font -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Boxicons -->
+    <link
+        href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+        rel="stylesheet"
+    >
+
+    <!-- Manifest PWA -->
+    <link
+        rel="manifest"
+        href="./manifest.json"
+    >
+
+    <!-- Icon màn hình chính iPhone -->
+    <link
+        rel="apple-touch-icon"
+        sizes="180x180"
+        href="./img/images/pocket.png"
+    >
+
+    <!-- Icon trình duyệt -->
+    <link
+        rel="icon"
+        type="image/png"
+        sizes="512x512"
+        href="./img/images/pocket.png"
+    >
+
+    <!-- Mở dưới dạng ứng dụng -->
+    <meta
+        name="apple-mobile-web-app-capable"
+        content="yes"
+    >
+
+    <meta
+        name="mobile-web-app-capable"
+        content="yes"
+    >
+
+    <meta
+        name="apple-mobile-web-app-status-bar-style"
+        content="black-translucent"
+    >
+
+    <meta
+        name="apple-mobile-web-app-title"
+        content="TokenPocket"
+    >
+
+    <meta
+        name="theme-color"
+        content="#ffffff"
+    >
+</head>
+
+    <body>
+       <div id="transition-layer"></div>
+<div id="app" class="page">
+    
+</div>
+       
+        <main class="app-container">
+            <header class="top-header">
+                <div class="header-left">
+                    <button type="button" class="plain-btn header-img-btn">
+                        <img class="header-icon icon-menu-line" src="img/images/gach1.png" alt="menu" />
+                    </button>
+
+                    <span class="status-dot"></span>
+                </div>
+
+                <div class="header-right">
+                    <img class="header-icon icon-wallet-menu" src="img/images/menu1.png" alt="wallet menu" />
+                </div>
+            </header>
+
+            <section class="balance-card">
+                    <img src="img/images/iconmo.png" class="bg-icon">
+                <div class="balance-top">
+                    <div class="wallet-name">
+                        BNB-HD
+                        <i class="bx bx-copy"></i>
+                    </div>
+
+                    <i class="bx bx-dots-horizontal-rounded dots-icon"></i>
+                </div>
+
+                <div class="balance-main">
+                    <span>$</span>
+                    <strong>432.19</strong>
+                    <div class="img-eye">
+                            <img src="img/images/eye.png" class="icon-eye">
+                    </div>
+                      
+                    
+                </div>
+            </section>
+
+            <section class="actions-grid">
+                <button class="action-item">
+                    <img class="action-icon icon-send" src="img/images/Chuyen1.png" alt="Send" />
+                    <span>Send</span>
+                </button>
+
+                <button class="action-item">
+                    <img class="action-icon icon-receive" src="img/images/Nhan1.png" alt="Receive" />
+                    <span>Receive</span>
+                </button>
+
+                <button class="action-item">
+                    <img class="action-icon icon-swap" src="img/images/swap.png" alt="Swap" />
+                    <span>Swap</span>
+                </button>
+
+                <button class="action-item">
+                    <img class="action-icon icon-tools" src="img/images/More Tools.png" alt="More Tools" />
+                    <span>More Tools</span>
+                </button>
+            </section>
+
+            <section class="tabs-section">
+                <div class="tabs-left">
+                    <button class="tab active">
+                        Asset
+                        <i class="bx bxs-down-arrow"></i>
+                    </button>
+                   
+                    <button class="tab">DeFi</button>
+                    <button class="tab">NFT</button>
+                    <div class="text-approve">
+                     <button class="tab">Approve</button>
+                    </div>
+                  
+                </div>
+
+                <div class="tabs-right">
+                    <button class="plain-btn">
+                        <i class="bx bx-search"></i>
+                    </button>
+
+                    <button class="plain-btn">
+                        <i class="bx bx-plus-circle"></i>
+                    </button>
+                </div>
+            </section>
+
+            <section class="content">
+                <div class="token-list">
+                    <div class="token-item">
+                        <div class="token-icon-wrap">
+                            <img class="token-icon token-bnb" src="img/images/BNB.jpg" alt="BNB" />
+                        </div>
+
+                        <div class="token-info">
+                            <div class="token-row">
+                                <h3>BNB</h3>
+                                <strong>0</strong>
+                            </div>
+
+                            <div class="token-row">
+                                <p>$605.53 <span class="green">+0.68%</span></p>
+                                <p>$0</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="./usdt.html" class="token-item">
+                        <div class="token-icon-wrap">
+                            <img class="token-icon token-usdt" src="img/images/BSC.png" alt="USDT" />
+                        </div>
+
+                        <div class="token-info">
+                            <div class="token-row">
+                                <h3>USDT</h3>
+                                <strong>432.19</strong>
+                            </div>
+
+                            <div class="token-row">
+                                <p>$1.0000 <span>0%</span></p>
+                                <p>$432.19</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="low-value">
+                    <div class="low-value-title">
+                        <span>Low-Value Assets (1)</span>
+                        <i class="bx bx-chevron-up"></i>
+                    </div>
+
+                    <a href="usdt.html" class="token-item">
+                        <div class="token-icon-wrap">
+                            <img class="token-icon token-trx" src="img/images/TRX.png" alt="TRX" />
+                        </div>
+
+                        <div class="token-info">
+                            <div class="token-row">
+                                <h3>TRX</h3>
+                                <strong>27</strong>
+                            </div>
+
+                            <div class="token-row">
+                                <p>$0.3229 <span class="red">-0.03%</span></p>
+                                <p>$0</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </section>
+         <nav class="bottom-nav">
+
+    <button class="nav-item asset-item">
+        <div class="asset-icon">
+            <img src="img/images/Asset1.png">
+        </div>
+        <div class="text-asset">
+        <span>Asset</span>
+        </div>
+    </button>
+
+    <button class="nav-item market-item">
+        <div class="market-icon">
+            <img src="img/images/Market.png">
+        </div>
+        <div class="text-market">
+  <span>Market</span>
+        </div>
+      
+    </button>
+
+    <button class="nav-item trade-item">
+        <div class="trade-icon">
+            <img src="img/images/Trade.png">
+        </div>
+        <div class="text-trade">
+              <span>Trade</span>
+        </div>
+    
+    </button>
+
+    <button class="nav-item discover-item">
+        <div class="discover-icon">
+            <img src="img/images/Discover.png">
+        </div>
+        <div class="text-discover">
+            <span>Discover</span>
+        </div>
+       
+    </button>
+
+    <button class="nav-item user-item">
+        <div class="user-icon">
+            <img src="img/images/user.png">
+        </div>
+         <div class="text-me">
+            <span>Me</span>
+        </div>
+    </button>
+
+
+        </nav>
+    </main>
+
+    <script>
+        const overlay =
+            document.getElementById("transition-layer");
+
+        document
+            .querySelectorAll("a.token-item")
+            .forEach(item => {
+                item.addEventListener(
+                    "click",
+                    function (event) {
+                        event.preventDefault();
+
+                        const target =
+                            this.getAttribute("href");
+
+                        if (!target) {
+                            return;
+                        }
+
+                        this.classList.add("active");
+
+                        if (overlay) {
+                            overlay.classList.add("show");
+                        }
+
+                        setTimeout(() => {
+                            window.location.assign(target);
+                        }, 280);
+                    }
+                );
+            });
+
+        if ("serviceWorker" in navigator) {
+            window.addEventListener("load", function () {
+                navigator.serviceWorker
+                    .register("./service-worker.js")
+                    .then(function () {
+                        console.log(
+                            "Service Worker đã hoạt động"
+                        );
+                    })
+                    .catch(function (error) {
+                        console.log(
+                            "Lỗi Service Worker:",
+                            error
+                        );
+                    });
+            });
+        }
+         const copyButton = document.getElementById("copyBtn");
+    const addressElement = document.getElementById("address");
+
+    if (copyButton && addressElement) {
+        copyButton.addEventListener("click", async () => {
+            const text = addressElement.textContent.trim();
+
+            try {
+                await navigator.clipboard.writeText(text);
+                showToast("Đã copy địa chỉ");
+            } catch (error) {
+                const temporaryInput =
+                    document.createElement("textarea");
+
+                temporaryInput.value = text;
+                temporaryInput.style.position = "fixed";
+                temporaryInput.style.opacity = "0";
+
+                document.body.appendChild(temporaryInput);
+                temporaryInput.select();
+
+                document.execCommand("copy");
+                temporaryInput.remove();
+
+                showToast("Đã copy địa chỉ");
+            }
+        });
+    }
+
+    function showToast(message) {
+        const oldToast = document.querySelector(".toast");
+
+        if (oldToast) {
+            oldToast.remove();
+        }
+
+        const toast = document.createElement("div");
+        toast.textContent = message;
+        toast.className = "toast";
+
+        document.body.appendChild(toast);
+
+        setTimeout(() => {
+            toast.remove();
+        }, 1500);
+    }
+
+    if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+            navigator.serviceWorker
+                .register("./service-worker.js")
+                .then(() => {
+                    console.log(
+                        "Service Worker đã hoạt động"
+                    );
+                })
+                .catch(error => {
+                    console.log(
+                        "Lỗi Service Worker:",
+                        error
+                    );
+                });
+        });
+    }
+    </script>
+</body>
+</html>

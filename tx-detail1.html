@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+ 
+
+    <meta
+        name="viewport"
+        content="width=device-width,
+                 initial-scale=1.0,
+                 maximum-scale=1.0,
+                 user-scalable=no,
+                 viewport-fit=cover"
+    >
+
+    <title>TokenPocket</title>
+
+
+    <!-- =========================
+         CẤU HÌNH PWA
+    ========================== -->
+
+    <link
+        rel="manifest"
+        href="./manifest.json"
+    >
+
+
+    <!-- =========================
+         ICON NGOÀI MÀN HÌNH IPHONE
+    ========================== -->
+
+    <link
+        rel="apple-touch-icon"
+        sizes="180x180"
+        href="img/images/pocket.png"
+    >
+
+
+    <!-- =========================
+         ICON TRÊN TRÌNH DUYỆT
+    ========================== -->
+
+    <link
+        rel="icon"
+        type="image/png"
+        sizes="512x512"
+        href="img/images/pocket.png"
+    >
+
+
+    <!-- =========================
+         MỞ GIỐNG ỨNG DỤNG IPHONE
+    ========================== -->
+
+    <meta
+        name="apple-mobile-web-app-capable"
+        content="yes"
+    >
+
+    <meta
+        name="mobile-web-app-capable"
+        content="yes"
+    >
+
+
+    <!-- =========================
+         THANH TRẠNG THÁI IPHONE
+    ========================== -->
+
+    <meta
+        name="apple-mobile-web-app-status-bar-style"
+        content="black-translucent"
+    >
+
+
+    <!-- =========================
+         TÊN ỨNG DỤNG
+    ========================== -->
+
+    <meta
+        name="apple-mobile-web-app-title"
+        content="TokenPocket"
+    >
+
+
+    <!-- =========================
+         MÀU GIAO DIỆN
+    ========================== -->
+
+    <meta
+        name="theme-color"
+        content="#f4f5fa"
+    >
+
+
+    <!-- =========================
+         FONT INTER
+    ========================== -->
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =========================
+         ICON BOXICONS
+    ========================== -->
+
+    <link
+        href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+        rel="stylesheet"
+    >
+    <style>
+     body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: #f5f5f5;
+    /* background: #ffffff; */
+}
+
+/* CONTAINER */
+.detail-container {
+    max-width: 400px;
+    margin: auto;
+    height: 1012px;
+        background:#f4f3f8;
+}
+.total-detail{
+     background: #ffffff;
+}
+/* HEADER */
+.header {
+      margin-top: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 12px;
+}
+
+.back {
+    position: absolute;
+    left: 12px;
+
+    cursor: pointer;
+        font-size: 31px;
+    margin-top: -6px;
+      color:#3c3c3c ;
+}
+.bx-check{
+    width: 10px;
+}
+
+.header span {
+    flex: 1;
+    text-align: center;
+        margin-top: 23px;
+        font-weight: bold;
+        color:#3c3c3c ;
+}
+.app-container {
+    max-width: 400px;
+    margin: auto;
+    background: #f5f6f8; /* nền app */
+    min-height: 100vh; /* 🔥 QUAN TRỌNG */
+}
+
+
+/* STATUS */
+.status {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.icon-success {
+    width: 56px;
+    height: 56px;
+    background-color:#12c287; /* Nếu là background của icon */
+    color: #FFFFFF;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    font-size: 26px;
+    color: white;
+}
+
+/* CARD CHUNG */
+.card {
+    background: #f4f5f7;
+    border-radius: 18px;
+    padding: 14px;
+    margin-bottom: 12px;
+}
+
+/* TEXT */
+.label {
+    font-size: 12px;
+    color: #9ca3af;
+}
+
+.value {
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 2px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.sub {
+    font-size: 12px;
+    color: #6b7280;
+    margin-top: 2px;
+}
+
+.mt {
+    margin-top: 10px;
+}
+
+/* FEE BOX */
+.fee-box {
+    display: flex;
+    gap: 6px;
+    margin-top: 6px;
+}
+
+.fee-box span {
+    background: #e5e7eb;
+    padding: 4px 8px;
+    border-radius: 8px;
+    font-size: 12px;
+      color:#3c3c3c ;
+}
+
+/* EXPAND */
+.expand {
+    margin-top: 8px;
+    color: #3b82f6;
+    font-size: 13px;
+}
+
+/* CARD 2 LAYOUT */
+.flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+/* QR */
+.right img {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+}
+
+.link {
+    font-size: 12px;
+    color: #9ca3af;
+    text-align: center;
+    display: block;
+    margin-top: 4px;
+}
+
+.icon-success i {
+        font-size: 50px;
+    color: white;
+    margin-left: -38px;
+    margin-top: 4px;
+}
+.success-text {
+    color: #12c287;
+    margin: 10px 0 5px;
+    font-size: 14px;
+    font-weight:   bold;
+}
+
+.status h1 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 500;
+    color: #3c3c3c;
+}
+
+/* CARD */
+
+    .card {
+    background: #fff;
+    margin: 8px 13px;   /* 🔥 QUAN TRỌNG */
+    padding: 16px;
+    border-radius: 16px;
+}
+
+    .card1 {
+    background: #fff;
+    margin: 8px 13px;   /* 🔥 QUAN TRỌNG */
+    padding: 16px;
+    border-radius: 16px;
+    line-height: 1.3
+}
+.tx-card {
+    background: #f2f3f5;
+    border-radius: 16px;
+    padding: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* 🔥 giúp không bị kéo cao */
+}
+.card.footer {
+    padding:5px; /* giảm từ ~20px xuống */
+    border-radius: 16px;
+}
+.icon-box {
+    width: 48px;
+    height: 48px;
+}
+/* ROW */
+.row {
+    margin-bottom: 14px;
+}
+
+.label {
+    color: #9ca3af;
+    font-size: 13px;
+}
+
+.value {
+      color:#3c3c3c ;
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 3px;
+}
+
+/* TAGS */
+.tags {
+    display: flex;
+    gap: 6px;
+    margin-top: 8px;
+}
+
+.tags span {
+    background: #f3f4f6;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 12px;
+}
+
+/* EXPAND */
+.expand {
+    color: #2563eb;
+    font-size: 13px;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+/* QR CARD */
+.qr-card {
+    display: flex;
+    justify-content: space-between;
+}
+
+.qr img {
+      width: 152px;
+    margin-left: 27px;
+    margin-top: -12px;
+}
+
+.qr span {
+   font-size: 14px;
+    color: #9ca3af;
+    display: block;
+    margin-top: -37px;
+    margin-left: 86px;
+    font-weight: 500;
+}
+
+/* FOOTER */
+.footer-title {
+    display: block;
+    text-align: center;
+       color: #9ca3af;
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: space-around; /* cách đều */
+    align-items: center;
+    margin-top: 10px;
+}
+.item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
+.icon-box {
+     width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-box img {
+     width: 100%;
+    height: 100%;
+    object-fit: contain; /* giữ tỉ lệ */
+}
+.footer-links .item {
+    text-align: center;
+    font-size: 12px;
+      color:#3c3c3c ;
+}
+
+.footer-links img {
+      width: 138px;
+    height: 140px;
+    /* margin-bottom: -12px; */
+}
+    </style>
+</head>
+<body>
+    <div class="total-detail ">
+   <div class="detail-container">
+
+    <!-- HEADER -->
+    <div class="header">
+    <a href="usdt.html">
+        <i class='bx bx-chevron-left back'></i>
+    </a>
+    <span>Transaction Details</span>
+    <div></div>
+</div>
+
+    <!-- STATUS -->
+    <div class="status">
+        <div class="icon-success"><i class='bx bx-check'></i></div>
+        <p class="success-text">Transaction Succeeded</p>
+        <h1>-200 USDT</h1>
+    </div>
+
+    <!-- CARD 1 -->
+    <!-- CARD 1 -->
+<div class="card">
+    <div class="label">From</div>
+    <div class="value">
+        TF1FpwwtxhaxRw...9FJbReGGPTvUwkrNe
+        <i class='bx bx-copy'></i>
+    </div>
+    <div class="sub">(TRX-HD)</div>
+
+    <div class="label mt">To</div>
+    <div class="value">
+       TKmaER4tfDFV...MAt2E3agtEbpEZGphyK
+        <i class='bx bx-copy'></i>
+    </div>
+
+    <div class="label mt">Network Fee</div>
+
+    <div class="fee-box">
+        <span>0.345 TRX</span>
+        <span>345 Bandwidth</span>
+        <span>130,285 Energy</span>
+    </div>
+
+    <div class="expand">Expand Details ▾</div>
+</div>
+
+
+<!-- CARD 2 -->
+<div class="card flex">
+    <div class="left">
+        <div class="label">TX Hash</div>
+        <div class="value">
+          bbb5ca546...6f789c6fe
+            <i class='bx bx-copy'></i>
+        </div>
+
+        <div class="label mt">Block Height</div>
+        <div class="value">
+            81,777,934
+            <i class='bx bx-copy'></i>
+        </div>
+
+        <div class="label mt">Time</div>
+        <div class="value">08/21  00:57:33 </div>
+    </div>
+
+    <!-- <div class="right">
+        <img src="img/images/qr.png">
+        <span class="link">Link</span>
+    </div>
+</div> -->
+
+        <div class="qr">
+            <img src="img/images/QR.png">
+            <span>Link <i class='bx bx-copy'></i></span>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+   <div class="card footer">
+    <span class="footer-title">Details</span>
+
+    <div class="footer-links">
+
+        <div class="item">
+            <div class="icon-box">
+                <img src="img/images/tronscan1.png">
+            </div>
+            <span>TRONSCAN</span>
+        </div>
+
+        <div class="item">
+            <div class="icon-box">
+                <img src="img/images/tokenview1.png">
+            </div>
+            <span>TOKENVIEW</span>
+        </div>
+
+    </div>
+</div>
+    </div>
+
+</div>
+</div>
+<script>
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", function () {
+      navigator.serviceWorker
+        .register("./service-worker.js")
+        .then(function () {
+          console.log("Service Worker đã hoạt động");
+        })
+        .catch(function (error) {
+          console.log("Lỗi Service Worker:", error);
+        });
+    });
+  }
+</script>
+</body>
+</html>
